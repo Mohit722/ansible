@@ -1,0 +1,10 @@
+--- # For variable task
+- hosts: DEMO
+  user: ansible
+  become: yes
+  connection: ssh
+  vars:
+        pkgname: httpd
+  tasks:
+               - name: install HTTPD server
+                 action: yum name='{{pkgname}}' state=installed
